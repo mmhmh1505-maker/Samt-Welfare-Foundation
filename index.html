@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl" id="htmlTag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samt Welfare Foundation | سمت ویلفیئر فاؤنڈیشن</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0b4d3c;
+            --primary-dark: #063227;
+            --accent: #d4af37;
+            --bg-color: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --red-blood: #dc2626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.8;
+            text-align: right;
+        }
+
+        body.ltr {
+            direction: ltr;
+            text-align: left;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        header {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .logo-container h1 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .org-started {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .nav-and-lang {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .lang-btn {
+            background: var(--accent);
+            color: var(--primary-dark);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .arabic-slogan {
+            font-family: 'Amiri', serif;
+            font-size: 2.3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #e2e8f0;
+        }
+
+        .contact-info-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-info-box p {
+            margin: 0.3rem 0;
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-top: 5px solid var(--primary);
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .project-card i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            font-size: 0.98rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-link {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .quote-section {
+            background: var(--white);
+            border: 2px dashed var(--accent);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .quote-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .quote-translation {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .detail-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            margin-bottom: 3rem;
+            border-right: 6px solid var(--primary);
+        }
+
+        body.ltr .detail-card {
+            border-right: none;
+            border-left: 6px solid var(--primary);
+        }
+
+        .detail-card.blood-card {
+            border-right-color: var(--red-blood);
+        }
+        body.ltr .detail-card.blood-card {
+            border-left-color: var(--red-blood);
+        }
+
+        .detail-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .detail-card.blood-card h3 {
+            color: var(--red-blood);
+        }
+
+        .detail-card p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .requirement-box {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 1.8rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .requirement-box h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blood-request-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 1.8rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .blood-request-box h4 {
+            color: var(--red-blood);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            background: var(--white);
+        }
+
+        .btn-submit-req {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit-req:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-submit-blood {
+            background: var(--red-blood);
+            color: var(--white);
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit-blood:hover {
+            background: #b91c1c;
+        }
+
+        .team-section {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-top: 5px solid var(--accent);
+            margin-bottom: 3rem;
+        }
+
+        .team-section h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-section p {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: #94a3b8;
+            padding: 2.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        footer strong {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <img src="logo.jpg" alt="Logo" class="logo-img">
+            <div class="logo-container">
+                <h1 data-ur="سمت ویلفیئر فاؤنڈیشن" data-en="Samt Welfare Foundation">سمت ویلفیئر فاؤنڈیشن</h1>
+                <div class="org-started" data-ur="تاسیس: اکتوبر 2026 | شکر گڑھ اور دیگر شہر" data-en="Established: October 2026 | Shakargarh & Other Cities">تاسیس: اکتوبر 2026 | شکر گڑھ اور دیگر شہر</div>
+            </div>
+        </div>
+        <div class="nav-and-lang">
+            <div class="nav-links">
+                <a href="#home" data-ur="ہوم پیج" data-en="Home">ہوم پیج</a>
+                <a href="#projects-detail" data-ur="تفصیلی پراجیکٹس" data-en="Projects">تفصیلی پراجیکٹس</a>
+                <a href="#join-team" data-ur="ٹیم میں شامل ہوں" data-en="Join Team">ٹیم میں شامل ہوں</a>
+            </div>
+            <button class="lang-btn" onclick="toggleLanguage()">English / اردو</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="arabic-slogan">نَحْوُ سَمْتِ الخَيْرِ وَالعَطَاءِ</div>
+        <p data-ur="مستحق افراد اور بچوں کے لیے فلاحی خدمات کا خالص اور شفاف مشن۔" data-en="A pure and transparent welfare mission for deserving individuals and children.">مستحق افراد اور بچوں کے لیے فلاحی خدمات کا خالص اور شفاف مشن۔</p>
+        
+        <div class="contact-info-box">
+            <p><i class="fa-solid fa-phone"></i> <span data-ur="واٹس ایپ نمبر:" data-en="WhatsApp:">واٹس ایپ نمبر:</span> 03216633602</p>
+            <p><i class="fa-solid fa-envelope"></i> <span data-ur="ای میل:" data-en="Email:">ای میل:</span> hannan3016633@gmail.com</p>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <h2 class="section-title" data-ur="ہمارے بنیادی پراجیکٹس" data-en="Our Core Projects">ہمارے بنیادی پراجیکٹس</h2>
+        
+        <div class="projects-grid">
+            <a href="#ration" class="project-card">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <h3 data-ur="راشن کی تقسیم" data-en="Ration Distribution">راشن کی تقسیم</h3>
+                <p data-ur="مستحق خاندانوں کے لیے گھر گھر راشن کی فراہمی۔" data-en="Door-to-door ration delivery for deserving families.">مستحق خاندانوں کے لیے گھر گھر راشن کی فراہمی۔</p>
+                <span class="read-more-link"><span data-ur="تفصیل دیکھیں" data-en="View Details">تفصیل دیکھیں</span> <i class="fa-solid fa-arrow-down"></i></span>
+            </a>
+
+            <a href="#islamic-education" class="project-card">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <h3 data-ur="مفت کتابیں اور یونیفارم" data-en="Free Books & Uniform">مفت کتابیں اور یونیفارم</h3>
+                <p data-ur="قرآن کریم حفظ کرنے والے بچوں کے لیے امداد۔" data-en="Support for children memorizing the Holy Quran.">قرآن کریم حفظ کرنے والے بچوں کے لیے امداد۔</p>
+                <span class="read-more-link"><span data-ur="تفصیل دیکھیں" data-en="View Details">تفصیل دیکھیں</span> <i class="fa-solid fa-arrow-down"></i></span>
+            </a>
+
+            <a href="#blood-donation" class="project-card" style="border-top-color: var(--red-blood);">
+                <i class="fa-solid fa-droplet" style="color: var(--red-blood);"></i>
+                <h3 data-ur="خون کی فراہمی (ایمرجنسی)" data-en="Blood Emergency Network">خون کی فراہمی (ایمرجنسی)</h3>
+                <p data-ur="مریضوں کے لیے فوری خون کا حصول اور رابطہ۔" data-en="Immediate blood arrangement and coordination for patients.">مریضوں کے لیے فوری خون کا حصول اور رابطہ۔</p>
+                <span class="read-more-link" style="color: var(--red-blood);"><span data-ur="تفصیل دیکھیں" data-en="View Details">تفصیل دیکھیں</span> <i class="fa-solid fa-arrow-down"></i></span>
+            </a>
+        </div>
+
+        <div class="quote-section">
+            <div class="quote-arabic">خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</div>
+            <div class="quote-translation" data-ur='"لوگوں میں بہترین وہ ہے جو لوگوں کے لیے سب سے زیادہ نفع بخش ہو۔"' data-en='"The best among people are those who are most beneficial to others."'>"لوگوں میں بہترین وہ ہے جو لوگوں کے لیے سب سے زیادہ نفع بخش ہو۔"</div>
+        </div>
+
+        <!-- DETAILED SECTIONS -->
+        <div id="projects-detail"></div>
+        <h2 class="section-title" data-ur="پراجیکٹس کی مکمل تفصیل اور درخواست فارم" data-en="Detailed Projects & Request Forms">پراجیکٹس کی مکمل تفصیل اور درخواست فارم</h2>
+
+        <!-- 1. Ration Detail & Form -->
+        <div id="ration" class="detail-card">
+            <h3><i class="fa-solid fa-basket-shopping"></i> <span data-ur="1. راشن کی تقسیم" data-en="1. Ration Distribution">1. راشن کی تقسیم</span></h3>
+            <p><strong><span data-ur="مقصد:" data-en="Objective:">مقصد:</span></strong> <span data-ur="شکر گڑھ اور گردونواح کے مستحق اور غریب خاندانوں کی بنیادی خوراک کی ضروریات کو باوقار طریقے سے پورا کرنا۔" data-en="Dignified fulfillment of basic food needs for deserving families in Shakargarh and surroundings.">شکر گڑھ اور گردونواح کے مستحق اور غریب خاندانوں کی بنیادی خوراک کی ضروریات کو باوقار طریقے سے پورا کرنا۔</span></p>
+            
+            <div class="requirement-box">
+                <h4 data-ur="راشن یا خوراک کی ضرورت کے لیے یہاں رابطہ کریں" data-en="Request Ration or Food Support"><i class="fa-solid fa-hand-holding-heart"></i> راشن یا خوراک کی ضرورت کے لیے یہاں رابطہ کریں</h4>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
+                    <input type="hidden" name="subject" value="New Ration Request - Samt Welfare">
+
+                    <div class="form-group">
+                        <label data-ur="آپ کا نام" data-en="Your Name">آپ کا نام</label>
+                        <input type="text" name="Name" placeholder="اپنا نام درج کریں" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="رابطہ نمبر / فون نمبر (لازمی)" data-en="Phone Number (Required)">رابطہ نمبر / فون نمبر (لازمی)</label>
+                        <input type="tel" name="Phone" placeholder="0300 0000000" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="آپ کا شہر یا علاقہ" data-en="Your City or Area">آپ کا شہر یا علاقہ</label>
+                        <input type="text" name="City" placeholder="شہر یا محلے کا نام" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="تفصیل (کتنی ضرورت ہے؟)" data-en="Details (What is required?)">تفصیل (کتنی ضرورت ہے؟)</label>
+                        <textarea name="Details" rows="2" placeholder="مختصر تفصیل لکھیں..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-req" data-ur="راشن کی درخواست جی میل پر بھیجیں" data-en="Submit Ration Request">راشن کی درخواست جی میل پر بھیجیں</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. Islamic Studies & Uniform Detail & Form -->
+        <div id="islamic-education" class="detail-card">
+            <h3><i class="fa-solid fa-book-open-reader"></i> <span data-ur="2. مفت کتابیں اور یونیفارم برائے اسلامی تعلیم" data-en="2. Free Books & Uniform for Islamic Studies">2. مفت کتابیں اور یونیفارم برائے اسلامی تعلیم</span></h3>
+            <p><strong><span data-ur="مقصد:" data-en="Objective:">مقصد:</span></strong> <span data-ur="مدارس میں قرآن مجید حفظ کرنے والے اور دینی تعلیم حاصل کرنے والے مستحق و غریب طلباء کی حوصلہ افزائی کرنا۔" data-en="Encouraging deserving and poor students memorizing the Holy Quran and acquiring religious education in madrasas.">مدارس میں قرآن مجید حفظ کرنے والے اور دینی تعلیم حاصل کرنے والے مستحق و غریب طلباء کی حوصلہ افزائی کرنا۔</span></p>
+            
+            <div class="requirement-box">
+                <h4 data-ur="کتابیں یا یونیفارم کی ضرورت کے لیے یہاں رابطہ کریں" data-en="Request Books or Uniform Support"><i class="fa-solid fa-book"></i> کتابیں یا یونیفارم کی ضرورت کے لیے یہاں رابطہ کریں</h4>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
+                    <input type="hidden" name="subject" value="New Books/Uniform Request - Samt Welfare">
+
+                    <div class="form-group">
+                        <label data-ur="طالب علم یا سرپرست کا نام" data-en="Student/Guardian Name">طالب علم یا سرپرست کا نام</label>
+                        <input type="text" name="Name" placeholder="اپنا نام درج کریں" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="رابطہ نمبر / فون نمبر (لازمی)" data-en="Phone Number (Required)">رابطہ نمبر / فون نمبر (لازمی)</label>
+                        <input type="tel" name="Phone" placeholder="0300 0000000" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="آپ کا شہر یا علاقہ" data-en="Your City or Area">آپ کا شہر یا علاقہ</label>
+                        <input type="text" name="City" placeholder="شہر یا محلے کا نام" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="کون سی کتاب یا یونیفارم چاہیے؟" data-en="What books/uniform is required?">کون سی کتاب یا یونیفارم چاہیے؟</label>
+                        <textarea name="Details" rows="2" placeholder="مختصر تفصیل لکھیں..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-req" data-ur="کتابیں/یونیفارم کی درخواست جی میل پر بھیجیں" data-en="Submit Books Request">کتابیں/یونیفارم کی درخواست جی میل پر بھیجیں</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 3. Blood Donation & Emergency Network -->
+        <div id="blood-donation" class="detail-card blood-card">
+            <h3><i class="fa-solid fa-droplet" style="color: var(--red-blood);"></i> <span data-ur="3. خون کی فراہمی (بلڈ ڈونر نیٹ ورک)" data-en="3. Blood Emergency Network">3. خون کی فراہمی (بلڈ ڈونر نیٹ ورک)</span></h3>
+            <p><strong><span data-ur="مقصد:" data-en="Objective:">مقصد:</span></strong> <span data-ur="بوقتِ ضرورت اسپتالوں میں زیرِ علاج مریضوں کے لیے فوری خون کا انتظام کرنا اور قیمتی جانیں بچانا۔" data-en="Immediate blood arrangement for patients in hospitals and saving precious lives.">بوقتِ ضرورت اسپتالوں میں زیرِ علاج مریضوں کے لیے فوری خون کا انتظام کرنا اور قیمتی جانیں بچانا۔</span></p>
+            
+            <!-- Section A: Khoon ki Zaroorat -->
+            <div class="blood-request-box">
+                <h4 data-ur="الف) خون کی ضرورت ہے (Emergency Blood Request)" data-en="A) Emergency Blood Request"><i class="fa-solid fa-triangle-exclamation"></i> الف) خون کی ضرورت ہے (Emergency Blood Request)</h4>
+                
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
+                    <input type="hidden" name="subject" value="EMERGENCY BLOOD REQUEST - Samt Welfare">
+
+                    <div class="form-group">
+                        <label data-ur="مریض یا رابطہ کرنے والے کا نام" data-en="Patient / Contact Name">مریض یا رابطہ کرنے والے کا نام</label>
+                        <input type="text" name="Name" placeholder="نام درج کریں" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="رابطہ نمبر / فون نمبر (لازمی)" data-en="Phone Number (Required)">رابطہ نمبر / فون نمبر (لازمی)</label>
+                        <input type="tel" name="Phone" placeholder="0300 0000000" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="کون سا شہر / اسپتال ہے؟" data-en="City / Hospital Name?">کون سا شہر / اسپتال ہے؟</label>
+                        <input type="text" name="City_Hospital" placeholder="شہر یا اسپتال کا نام" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="کون سا بلڈ گروپ چاہیے؟" data-en="Which Blood Group is Required?">کون سا بلڈ گروپ چاہیے؟</label>
+                        <select name="Blood_Group" required>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="O+">O+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="A-">A-</option>
+                            <option value="B-">B-</option>
+                            <option value="O-">O-</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit-blood" data-ur="خون کی ہنگامی درخواست جی میل پر بھیجیں" data-en="Submit Emergency Blood Request">خون کی ہنگامی درخواست جی میل پر بھیجیں</button>
+                </form>
+            </div>
+
+            <!-- Section B: Khoon Dena Chahta Hu -->
+            <div class="requirement-box" style="margin-top: 2rem;">
+                <h4 data-ur="ب) خون دینا چاہتے ہیں (Blood Donor Registration)" data-en="B) Blood Donor Registration"><i class="fa-solid fa-user-plus"></i> ب) خون دینا چاہتے ہیں (Blood Donor Registration)</h4>
+                
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
+                    <input type="hidden" name="subject" value="New Blood Donor Registration - Samt Welfare">
+
+                    <div class="form-group">
+                        <label data-ur="رضاکار کا نام" data-en="Donor Name">رضاکار کا نام</label>
+                        <input type="text" name="Name" placeholder="اپنا نام درج کریں" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="واٹس ایپ / فون نمبر (لازمی)" data-en="WhatsApp / Phone Number (Required)">واٹس ایپ / فون نمبر (لازمی)</label>
+                        <input type="tel" name="Phone" placeholder="0300 0000000" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="آپ کا شہر یا علاقہ" data-en="Your City or Area">آپ کا شہر یا علاقہ</label>
+                        <input type="text" name="City" placeholder="شہر یا محلے کا نام" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-ur="آپ کا بلڈ گروپ" data-en="Your Blood Group">آپ کا بلڈ گروپ</label>
+                        <select name="Blood_Group" required>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="O+">O+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="A-">A-</option>
+                            <option value="B-">B-</option>
+                            <option value="O-">O-</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit-req" data-ur="بطور بلڈ ڈونر رجسٹریشن جی میل پر بھیجیں" data-en="Register as Blood Donor">بطور بلڈ ڈونر رجسٹریشن جی میل پر بھیجیں</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- COMMUNITY TEAM SECTION -->
+        <div id="join-team" class="team-section">
+            <h3 data-ur="سمت ویلفیئر فاؤنڈیشن کی کمیونٹی ٹیم میں شامل ہوں" data-en="Join Samt Welfare Foundation Community Team"><i class="fa-solid fa-users" style="color: var(--primary);"></i> سمت ویلفیئر فاؤنڈیشن کی کمیونٹی ٹیم میں شامل ہوں</h3>
+            <p data-ur="چاہے آپ شکر گڑھ سے ہوں یا پاکستان کے کسی بھی دوسرے شہر سے، اگر آپ فلاحی کاموں اور نیکی میں ہمارا ساتھ دینا چاہتے ہیں تو یہاں اپنی تفصیلات درج کریں:" data-en="Whether from Shakargarh or any other city in Pakistan, if you want to join our welfare mission, enter your details here:">چاہے آپ شکر گڑھ سے ہوں یا پاکستان کے کسی بھی دوسرے شہر سے، اگر آپ فلاحی کاموں اور نیکی میں ہمارا ساتھ دینا چاہتے ہیں تو یہاں اپنی تفصیلات درج کریں:</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
+                <input type="hidden" name="subject" value="New Team Join Request - Samt Welfare">
+
+                <div class="form-group">
+                    <label data-ur="پورا نام (Full Name)" data-en="Full Name">پورا نام (Full Name)</label>
+                    <input type="text" name="Name" placeholder="اپنا پورا نام درج کریں" required>
+                </div>
+                <div class="form-group">
+                    <label data-ur="واٹس ایپ / فون نمبر (لازمی)" data-en="WhatsApp / Phone Number (Required)">WhatsApp / Phone Number (Required)</label>
+                    <input type="tel" name="Phone" placeholder="0300 0000000" required>
+                </div>
+                <div class="form-group">
+                    <label data-ur="آپ کا شہر یا علاقہ (City / Area)" data-en="City / Area">آپ کا شہر یا علاقہ (City / Area)</label>
+                    <input type="text" name="City" placeholder="اپنے شہر یا علاقے کا نام درج کریں" required>
+                </div>
+                <button type="submit" class="btn-submit-req" data-ur="ٹیم میں شمولیت کی درخواست جی میل پر بھیجیں" data-en="Submit Team Join Request">ٹیم میں شمولیت کی درخواست جی میل پر بھیجیں</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Samt Welfare Foundation (سمت ویلفیئر فاؤنڈیشن)</strong>. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'ur';
+        function toggleLanguage() {
+            currentLang = currentLang === 'ur' ? 'en' : 'ur';
+            const htmlTag = document.getElementById('htmlTag');
+            if (currentLang === 'en') {
+                htmlTag.setAttribute('dir', 'ltr');
+                document.body.classList.add('ltr');
+            } else {
+                htmlTag.setAttribute('dir', 'rtl');
+                document.body.classList.remove('ltr');
+            }
+
+            document.querySelectorAll('[data-ur]').forEach(el => {
+                el.innerText = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+    </script>
+</body>
+</html>
