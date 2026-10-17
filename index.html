@@ -146,20 +146,6 @@
             color: #e2e8f0;
         }
 
-        .contact-info-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
-        }
-
-        .contact-info-box p {
-            margin: 0.3rem 0;
-            color: var(--white);
-        }
-
         .container {
             max-width: 1000px;
             margin: 3rem auto;
@@ -395,12 +381,38 @@
             font-size: 1.05rem;
         }
 
+        /* Footer & Contact Section */
         footer {
             background: var(--text-dark);
             color: #94a3b8;
-            padding: 2.5rem;
+            padding: 3rem 2rem;
             text-align: center;
             font-size: 0.95rem;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .footer-contact-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 1.5rem 0;
+            font-size: 1.05rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-contact-box p {
+            margin: 0.4rem 0;
+            color: var(--white);
         }
 
         footer strong {
@@ -410,9 +422,9 @@
         .footer-notice {
             color: #cbd5e1;
             font-size: 0.95rem;
-            margin-top: 0.8rem;
+            margin-top: 1rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 0.8rem;
+            padding-top: 1rem;
         }
 
         .sitemap-box {
@@ -479,11 +491,6 @@
     <section id="home" class="hero">
         <div class="arabic-slogan">نَحْوُ سَمْتِ الخَيْرِ وَالعَطَاءِ</div>
         <p data-ur="مستحق افراد اور بچوں کے لیے فلاحی خدمات کا خالص اور شفاف مشن۔" data-en="A pure and transparent welfare mission for deserving individuals and children.">مستحق افراد اور بچوں کے لیے فلاحی خدمات کا خالص اور شفاف مشن۔</p>
-        
-        <div class="contact-info-box">
-            <p><i class="fa-solid fa-phone"></i> <span data-ur="واٹس ایپ نمبر:" data-en="WhatsApp:">واٹس ایپ نمبر:</span> 03216633602</p>
-            <p><i class="fa-solid fa-envelope"></i> <span data-ur="ای میل:" data-en="Email:">ای میل:</span> hannan3016633@gmail.com</p>
-        </div>
     </section>
 
     <div class="container">
@@ -529,7 +536,7 @@
             
             <div class="requirement-box">
                 <h4 data-ur="راشن یا خوراک کی ضرورت کے لیے یہاں رابطہ کریں" data-en="Request Ration or Food Support"><i class="fa-solid fa-hand-holding-heart"></i> راشن یا خوراک کی ضرورت کے لیے یہاں رابطہ کریں</h4>
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form class="w3-form" onsubmit="submitForm(event, this)">
                     <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
                     <input type="hidden" name="subject" value="New Ration Request - Samt Welfare">
 
@@ -549,7 +556,7 @@
                         <label data-ur="تفصیل (کتنی ضرورت ہے؟)" data-en="Details (What is required?)">تفصیل (کتنی ضرورت ہے؟)</label>
                         <textarea name="Details" rows="2" placeholder="مختصر تفصیل لکھیں..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit-req" data-ur="راشن کی درخواست جی میل پر بھیجیں" data-en="Submit Ration Request">راشن کی درخواست جی میل پر بھیجیں</button>
+                    <button type="submit" class="btn-submit-req" data-ur="جمع کروائیں (Submit)" data-en="Submit">جمع کروائیں (Submit)</button>
                 </form>
             </div>
         </div>
@@ -561,7 +568,7 @@
             
             <div class="requirement-box">
                 <h4 data-ur="کتابیں یا یونیفارم کی ضرورت کے لیے یہاں رابطہ کریں" data-en="Request Books or Uniform Support"><i class="fa-solid fa-book"></i> کتابیں یا یونیفارم کی ضرورت کے لیے یہاں رابطہ کریں</h4>
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form class="w3-form" onsubmit="submitForm(event, this)">
                     <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
                     <input type="hidden" name="subject" value="New Books/Uniform Request - Samt Welfare">
 
@@ -581,7 +588,7 @@
                         <label data-ur="کون سی کتاب یا یونیفارم چاہیے؟" data-en="What books/uniform is required?">کون سی کتاب یا یونیفارم چاہیے؟</label>
                         <textarea name="Details" rows="2" placeholder="مختصر تفصیل لکھیں..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit-req" data-ur="کتابیں/یونیفارم کی درخواست جی میل پر بھیجیں" data-en="Submit Books Request">کتابیں/یونیفارم کی درخواست جی میل پر بھیجیں</button>
+                    <button type="submit" class="btn-submit-req" data-ur="جمع کروائیں (Submit)" data-en="Submit">جمع کروائیں (Submit)</button>
                 </form>
             </div>
         </div>
@@ -595,7 +602,7 @@
             <div class="blood-request-box">
                 <h4 data-ur="الف) خون کی ضرورت ہے (Emergency Blood Request)" data-en="A) Emergency Blood Request"><i class="fa-solid fa-triangle-exclamation"></i> الف) خون کی ضرورت ہے (Emergency Blood Request)</h4>
                 
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form class="w3-form" onsubmit="submitForm(event, this)">
                     <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
                     <input type="hidden" name="subject" value="EMERGENCY BLOOD REQUEST - Samt Welfare">
 
@@ -624,7 +631,7 @@
                             <option value="AB-">AB-</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit-blood" data-ur="خون کی ہنگامی درخواست جی میل پر بھیجیں" data-en="Submit Emergency Blood Request">خون کی ہنگامی درخواست جی میل پر بھیجیں</button>
+                    <button type="submit" class="btn-submit-blood" data-ur="جمع کروائیں (Submit)" data-en="Submit">جمع کروائیں (Submit)</button>
                 </form>
             </div>
 
@@ -632,7 +639,7 @@
             <div class="requirement-box" style="margin-top: 2rem;">
                 <h4 data-ur="ب) خون دینا چاہتے ہیں (Blood Donor Registration)" data-en="B) Blood Donor Registration"><i class="fa-solid fa-user-plus"></i> ب) خون دینا چاہتے ہیں (Blood Donor Registration)</h4>
                 
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form class="w3-form" onsubmit="submitForm(event, this)">
                     <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
                     <input type="hidden" name="subject" value="New Blood Donor Registration - Samt Welfare">
 
@@ -661,7 +668,7 @@
                             <option value="AB-">AB-</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit-req" data-ur="بطور بلڈ ڈونر رجسٹریشن جی میل پر بھیجیں" data-en="Register as Blood Donor">بطور بلڈ ڈونر رجسٹریشن جی میل پر بھیجیں</button>
+                    <button type="submit" class="btn-submit-req" data-ur="جمع کروائیں (Submit)" data-en="Submit">جمع کروائیں (Submit)</button>
                 </form>
             </div>
         </div>
@@ -671,7 +678,7 @@
             <h3 data-ur="سمت ویلفیئر فاؤنڈیشن کی کمیونٹی ٹیم میں شامل ہوں" data-en="Join Samt Welfare Foundation Community Team"><i class="fa-solid fa-users" style="color: var(--primary);"></i> سمت ویلفیئر فاؤنڈیشن کی کمیونٹی ٹیم میں شامل ہوں</h3>
             <p data-ur="چاہے آپ شکر گڑھ سے ہوں یا پاکستان کے کسی بھی دوسرے شہر سے، اگر آپ فلاحی کاموں اور نیکی میں ہمارا ساتھ دینا چاہتے ہیں تو یہاں اپنی تفصیلات درج کریں:" data-en="Whether from Shakargarh or any other city in Pakistan, if you want to join our welfare mission, enter your details here:">چاہے آپ شکر گڑھ سے ہوں یا پاکستان کے کسی بھی دوسرے شہر سے، اگر آپ فلاحی کاموں اور نیکی میں ہمارا ساتھ دینا چاہتے ہیں تو یہاں اپنی تفصیلات درج کریں:</p>
             
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form class="w3-form" onsubmit="submitForm(event, this)">
                 <input type="hidden" name="apikey" value="ddce519f-67c8-4409-96e7-2a82bd22765b">
                 <input type="hidden" name="subject" value="New Team Join Request - Samt Welfare">
 
@@ -687,7 +694,7 @@
                     <label data-ur="آپ کا شہر یا علاقہ (City / Area)" data-en="City / Area">آپ کا شہر یا علاقہ (City / Area)</label>
                     <input type="text" name="City" placeholder="اپنے شہر یا علاقے کا نام درج کریں" required>
                 </div>
-                <button type="submit" class="btn-submit-req" data-ur="ٹیم میں شمولیت کی درخواست جی میل پر بھیجیں" data-en="Submit Team Join Request">ٹیم میں شمولیت کی درخواست جی میل پر بھیجیں</button>
+                <button type="submit" class="btn-submit-req" data-ur="جمع کروائیں (Submit)" data-en="Submit">جمع کروائیں (Submit)</button>
             </form>
         </div>
 
@@ -705,8 +712,14 @@
 
     </div>
 
-    <!-- Footer -->
+    <!-- Footer with Large Logo and Contact Info -->
     <footer>
+        <img src="Gemini_Generated_Image_m7mk6tm7mk6tm7mk.jpg" alt="Samt Welfare Foundation Logo" class="footer-logo">
+        <br>
+        <div class="footer-contact-box">
+            <p><i class="fa-solid fa-phone"></i> <span data-ur="واٹس ایپ نمبر:" data-en="WhatsApp:">واٹس ایپ نمبر:</span> 03216633602</p>
+            <p><i class="fa-solid fa-envelope"></i> <span data-ur="ای میل:" data-en="Email:">ای میل:</span> hannan3016633@gmail.com</p>
+        </div>
         <p>&copy; 2026 <strong>Samt Welfare Foundation (سمت ویلفیئر فاؤنڈیشن)</strong>. All Rights Reserved.</p>
         <p class="footer-notice">ابھی اس فاؤنڈیشن کی خدمات صرف شکر گڑھ اور اس کے اردگرد نواح کے گاؤں کے لیے میسر ہے۔</p>
     </footer>
@@ -726,6 +739,29 @@
 
             document.querySelectorAll('[data-ur]').forEach(el => {
                 el.innerText = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+
+        // Custom Submission Handler with Web3Forms
+        function submitForm(event, form) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('جزاک اللہ! آپ کی درخواست موصول ہو گئی ہے، ہماری ٹیم آپ سے جلد رابطہ کرے گی۔');
+                    form.reset();
+                } else {
+                    alert('معذرت، درخواست جمع کرنے میں مسئلہ پیش آیا ہے۔ براہ کرم دوبارہ کوشش کریں۔');
+                }
+            })
+            .catch(error => {
+                alert('نیٹ ورک کا مسئلہ ہے، براہ کرم انٹرنیٹ کنکشن چیک کریں۔');
             });
         }
     </script>
